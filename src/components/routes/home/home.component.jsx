@@ -1,6 +1,6 @@
-import Directory from './components/directory/directory.component';
-
-const App = () => {
+import Directory from '../../directory/directory.component.jsx';
+import  { Outlet } from 'react-router-dom';
+const Home = () => {
   const categories = [
     {
       id: 1,
@@ -29,7 +29,13 @@ const App = () => {
     },
   ];
 
-  return <Directory categories={categories} />;
+  return (
+    <div>
+      <Outlet />
+      <Directory categories={categories} />
+    </div>
+  )
 };
 
-export default App;
+export default Home;
+// Whereever tht outlet component is that where the child route will render
